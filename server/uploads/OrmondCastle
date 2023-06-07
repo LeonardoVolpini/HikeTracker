@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2" version="1.1" creator="Walkhighlands">
+<metadata>
+    <name>Ormondcastle</name>
+    <author>
+        <name>gpx.studio</name>
+        <link href="https://gpx.studio"></link>
+    </author>
+</metadata>
+<trk>
+    <name>Ormondcastle</name>
+    <type>Cycling</type>
+    <trkseg>
+    <trkpt lat="57.5595320052107" lon="-4.1766879543106">
+        <ele>2.0</ele>
+    </trkpt>
+    <trkpt lat="57.5588745480573" lon="-4.18010929792084">
+        <ele>27.3</ele>
+    </trkpt>
+    <trkpt lat="57.5587787067016" lon="-4.18097623567538">
+        <ele>30.8</ele>
+    </trkpt>
+    <trkpt lat="57.5584785329476" lon="-4.18149993659148">
+        <ele>30.5</ele>
+    </trkpt>
+    <trkpt lat="57.5583529662322" lon="-4.18221462489363">
+        <ele>31.8</ele>
+    </trkpt>
+    <trkpt lat="57.5561228744528" lon="-4.18397686021953">
+        <ele>39.6</ele>
+    </trkpt>
+    <trkpt lat="57.555832049471" lon="-4.18395944717295">
+        <ele>40.2</ele>
+    </trkpt>
+    <trkpt lat="57.5553170650328" lon="-4.18287549418593">
+        <ele>41.0</ele>
+    </trkpt>
+    <trkpt lat="57.5544034386851" lon="-4.17911995475044">
+        <ele>44.2</ele>
+    </trkpt>
+    <trkpt lat="57.5541535727002" lon="-4.17860355965238">
+        <ele>52.4</ele>
+    </trkpt>
+    <trkpt lat="57.5539093156722" lon="-4.17869929432649">
+        <ele>57.0</ele>
+    </trkpt>
+    <trkpt lat="57.5532182821728" lon="-4.17953557092279">
+        <ele>67.6</ele>
+    </trkpt>
+    <trkpt lat="57.5529473032396" lon="-4.18008602205991">
+        <ele>64.4</ele>
+    </trkpt>
+    <trkpt lat="57.5533095041748" lon="-4.17971653118002">
+        <ele>70.3</ele>
+    </trkpt>
+    <trkpt lat="57.5535685350672" lon="-4.17970192123194">
+        <ele>62.5</ele>
+    </trkpt>
+    <trkpt lat="57.5533799084641" lon="-4.18032248788426">
+        <ele>64.2</ele>
+    </trkpt>
+    <trkpt lat="57.5532183385683" lon="-4.18031283112736">
+        <ele>67.3</ele>
+    </trkpt>
+    <trkpt lat="57.5532735572822" lon="-4.17992499513245">
+        <ele>72.9</ele>
+    </trkpt>
+    <trkpt lat="57.5529624221231" lon="-4.18014709988554">
+        <ele>64.2</ele>
+    </trkpt>
+    <trkpt lat="57.5526111851144" lon="-4.18081810710646">
+        <ele>58.9</ele>
+    </trkpt>
+    <trkpt lat="57.5523672726426" lon="-4.18089378603136">
+        <ele>60.7</ele>
+    </trkpt>
+    <trkpt lat="57.5518392839817" lon="-4.18056136008847">
+        <ele>66.0</ele>
+    </trkpt>
+    <trkpt lat="57.5509767332411" lon="-4.18087083173638">
+        <ele>69.4</ele>
+    </trkpt>
+    <trkpt lat="57.5493629867636" lon="-4.18300060078968">
+        <ele>71.5</ele>
+    </trkpt>
+    <trkpt lat="57.5481033420708" lon="-4.18476030953203">
+        <ele>63.6</ele>
+    </trkpt>
+    <trkpt lat="57.5475936592825" lon="-4.18617376405821">
+        <ele>63.9</ele>
+    </trkpt>
+    <trkpt lat="57.5469625287526" lon="-4.18806121493996">
+        <ele>57.1</ele>
+    </trkpt>
+    <trkpt lat="57.5469677392038" lon="-4.19055835704683">
+        <ele>52.0</ele>
+    </trkpt>
+    <trkpt lat="57.5475238000554" lon="-4.19299836173312">
+        <ele>42.0</ele>
+    </trkpt>
+    <trkpt lat="57.5479157116104" lon="-4.19371382836312">
+        <ele>34.3</ele>
+    </trkpt>
+    <trkpt lat="57.5484994475395" lon="-4.1936285908652">
+        <ele>44.3</ele>
+    </trkpt>
+    <trkpt lat="57.5515118084068" lon="-4.19618651966145">
+        <ele>54.7</ele>
+    </trkpt>
+    <trkpt lat="57.5517290544948" lon="-4.19764373919">
+        <ele>53.7</ele>
+    </trkpt>
+    <trkpt lat="57.5518593553751" lon="-4.1975914157744">
+        <ele>54.7</ele>
+    </trkpt>
+    <trkpt lat="57.5531346165032" lon="-4.19447897181415">
+        <ele>57.2</ele>
+    </trkpt>
+    <trkpt lat="57.5555921138261" lon="-4.19173823267845">
+        <ele>54.5</ele>
+    </trkpt>
+    <trkpt lat="57.556722078794" lon="-4.19000071065723">
+        <ele>52.9</ele>
+    </trkpt>
+    <trkpt lat="57.5583368092759" lon="-4.18221365819062">
+        <ele>31.7</ele>
+    </trkpt>
+    <trkpt lat="57.5584791997048" lon="-4.18151335056807">
+        <ele>30.5</ele>
+    </trkpt>
+    <trkpt lat="57.5587781874058" lon="-4.18100629658048">
+        <ele>30.9</ele>
+    </trkpt>
+    <trkpt lat="57.5588578719901" lon="-4.18013839311872">
+        <ele>27.7</ele>
+    </trkpt>
+    <trkpt lat="57.5595486804959" lon="-4.17665885698564">
+        <ele>1.9</ele>
+    </trkpt>
+    </trkseg>
+</trk>
+</gpx>

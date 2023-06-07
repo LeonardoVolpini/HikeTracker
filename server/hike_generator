@@ -1,0 +1,724 @@
+--
+-- File generated with SQLiteStudio v3.3.3 on dom dic 4 11:47:32 2022
+--
+-- Text encoding used: System
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: HikePoint
+DROP TABLE IF EXISTS HikePoint;
+
+CREATE TABLE HikePoint (
+    idPoint   INTEGER NOT NULL,
+    titleHike TEXT    NOT NULL,
+    FOREIGN KEY (
+        idPoint
+    )
+    REFERENCES Points (idPoint),
+    FOREIGN KEY (
+        titleHike
+    )
+    REFERENCES Hikes (title) 
+);
+
+
+-- Table: Hikes
+DROP TABLE IF EXISTS Hikes;
+
+CREATE TABLE Hikes (
+    title            TEXT    NOT NULL,
+    length           REAL    NOT NULL,
+    expected_time    INTEGER NOT NULL,
+    ascent           REAL    NOT NULL,
+    difficulty       TEXT    NOT NULL,
+    start_point      INTEGER NOT NULL,
+    end_point        INTEGER NOT NULL,
+    reference_points TEXT,
+    description      TEXT    NOT NULL,
+    gpx_track        TEXT    NOT NULL,
+    PRIMARY KEY (
+        title
+    )
+);
+
+INSERT INTO Hikes (
+                      title,
+                      length,
+                      expected_time,
+                      ascent,
+                      difficulty,
+                      start_point,
+                      end_point,
+                      reference_points,
+                      description,
+                      gpx_track
+                  )
+                  VALUES (
+                      'Form Pian Belota to la Vacca',
+                      5.42,
+                      4,
+                      392.12,
+                      'Tourist',
+                      11,
+                      11,
+                      '',
+                      'A beautiful Hike from Pian Belota to la Vacca',
+                      'Form Pian Belota to la Vacca'
+                  );
+
+INSERT INTO Hikes (
+                      title,
+                      length,
+                      expected_time,
+                      ascent,
+                      difficulty,
+                      start_point,
+                      end_point,
+                      reference_points,
+                      description,
+                      gpx_track
+                  )
+                  VALUES (
+                      'Via ferrata on Punta Vallettaz ',
+                      8.51,
+                      6,
+                      842.22,
+                      'Tourist',
+                      9,
+                      9,
+                      '',
+                      'An amazing hike around punta Vellettaz',
+                      'Via ferrata on Punta Vallettaz '
+                  );
+
+INSERT INTO Hikes (
+                      title,
+                      length,
+                      expected_time,
+                      ascent,
+                      difficulty,
+                      start_point,
+                      end_point,
+                      reference_points,
+                      description,
+                      gpx_track
+                  )
+                  VALUES (
+                      'Hike Monte Thabor',
+                      14.43,
+                      8,
+                      1412.7,
+                      'Professional hiker',
+                      14,
+                      15,
+                      '',
+                      'Hard Hike on Monte Thabor',
+                      'Hike Monte Thabor'
+                  );
+
+INSERT INTO Hikes (
+                      title,
+                      length,
+                      expected_time,
+                      ascent,
+                      difficulty,
+                      start_point,
+                      end_point,
+                      reference_points,
+                      description,
+                      gpx_track
+                  )
+                  VALUES (
+                      'Corbonat dal Buco della Marmotta ',
+                      12.13,
+                      7,
+                      1279.31,
+                      'Hiker',
+                      3,
+                      4,
+                      '',
+                      'Hard ascen but amazing view',
+                      'Corbonat dal Buco della Marmotta '
+                  );
+
+INSERT INTO Hikes (
+                      title,
+                      length,
+                      expected_time,
+                      ascent,
+                      difficulty,
+                      start_point,
+                      end_point,
+                      reference_points,
+                      description,
+                      gpx_track
+                  )
+                  VALUES (
+                      'Quintino Sella da Bettaforca',
+                      8.19,
+                      4,
+                      838.67,
+                      'Tourist',
+                      10,
+                      10,
+                      '',
+                      'Hike on Quintino Sella da Bettaforca',
+                      'Quintino Sella da Bettaforca'
+                  );
+
+INSERT INTO Hikes (
+                      title,
+                      length,
+                      expected_time,
+                      ascent,
+                      difficulty,
+                      start_point,
+                      end_point,
+                      reference_points,
+                      description,
+                      gpx_track
+                  )
+                  VALUES (
+                      'Rifugio Bonatti Val Ferret e piani del Malarat',
+                      13.0,
+                      12,
+                      701.4,
+                      'Professional hiker',
+                      16,
+                      16,
+                      '',
+                      'An hard travel around rifugio Bonatti and piani del Malarat',
+                      'Rifugio Bonatti Val Ferret e piani del Malarat'
+                  );
+
+INSERT INTO Hikes (
+                      title,
+                      length,
+                      expected_time,
+                      ascent,
+                      difficulty,
+                      start_point,
+                      end_point,
+                      reference_points,
+                      description,
+                      gpx_track
+                  )
+                  VALUES (
+                      'Guglia Ross',
+                      12.56,
+                      12,
+                      801.0,
+                      'Professional hiker',
+                      14,
+                      14,
+                      '',
+                      'Guglia Ross',
+                      'Guglia Ross'
+                  );
+
+
+-- Table: Huts
+DROP TABLE IF EXISTS Huts;
+
+CREATE TABLE Huts (
+    idHut       INTEGER PRIMARY KEY
+                        NOT NULL,
+    nameHut     TEXT    NOT NULL
+                        REFERENCES Points (nameLocation) 
+                        UNIQUE,
+    phone       TEXT    NOT NULL,
+    email       TEXT    NOT NULL,
+    web_site    TEXT,
+    description TEXT    NOT NULL
+);
+
+
+-- Table: Points
+DROP TABLE IF EXISTS Points;
+
+CREATE TABLE Points (
+    idPoint         INTEGER NOT NULL
+                            UNIQUE,
+    address         TEXT    NOT NULL
+                            UNIQUE,
+    nameLocation    TEXT,
+    gps_coordinates TEXT    NOT NULL
+                            UNIQUE,
+    type            TEXT,
+    capacity        INTEGER,
+    altitude        REAL,
+    PRIMARY KEY (
+        idPoint
+    )
+);
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       1,
+                       'La Riposa, GTA / 529 / SI, Trucco, Mompantero, Torino, Piedmont, 10059, Italy',
+                       'La Riposa',
+                       '45.177786,7.083372',
+                       'Hut',
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       2,
+                       'Nostra Signora del Rocciamelone, 585, Novalesa, Torino, Piedmont, 10059, Italy',
+                       'Nostra Signora del Rocciamelone',
+                       '45.203531,7.07734',
+                       'Hut',
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       3,
+                       '327, Lago di San Bernolfo - Collalunga, Vinadio, Cuneo, Piedmont, Italy',
+                       NULL,
+                       '44.259583,7.039722',
+                       'Parking Lot',
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       4,
+                       'Vinadio, Cuneo, Piedmont, Italy',
+                       NULL,
+                       '44.249216,7.017648',
+                       'Parking Lot',
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       5,
+                       'Vetan Villette, Saint-Pierre, Valle d''Aosta, 11011, Italia',
+                       NULL,
+                       '45.733842, 7.186496',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       6,
+                       'Rifugio Mont Fallère, Becca-Trail, Tza De La Comba, Saint-Pierre, Valle d''Aosta, 11018, Italia',
+                       NULL,
+                       '45.762135, 7.181581',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       7,
+                       'Via Mattie, Bussoleno, Torino, Piemonte, 10053, Italia',
+                       NULL,
+                       '45.1361555, 7.1467056',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       8,
+                       'Ceresole Reale, Torino, Piedmont, Italy',
+                       NULL,
+                       '45.4569007, 7.1710796',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       9,
+                       'Chamolé, 16, Comboé Superiore, Charvensod, Aosta Valley, 21000, Italy',
+                       NULL,
+                       '45.675468, 7.325956',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       10,
+                       'Colle Betta, Strada Regionale 43 di Staffal, Anderbatt, Gressoney-La-Trinité, Aosta Valley, Italy',
+                       NULL,
+                       '45.871799, 7.783465',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       11,
+                       'Webcam vista panoramica PANOMAX Glaciomuseo Serrù, Sentiero Glaciologico, Ceresole Reale, Torino, Piedmont, Italy',
+                       NULL,
+                       '45.463209, 7.132005',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       12,
+                       'Stazione Punta Indren, Punta Indren, Alagna Valsesia, Vercelli, Piedmont, Italy',
+                       NULL,
+                       '45.89042, 7.85711',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       13,
+                       'Rifugio Capanna Regina Margherita, Cresta del Soldato, Alagna Valsesia, Vercelli, Piedmont, Italy',
+                       NULL,
+                       '45.9268, 7.87683',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       14,
+                       'Granges de la Vallée Étroite, Névache, Briançon, Hautes-Alpes, Provence-Alpes-Côte d''Azur, Metropolitan France, 05100, France',
+                       NULL,
+                       '45.0686282, 6.6257489',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       15,
+                       'Pon dla Fundêrie, Névache, Briançon, Hautes-Alpes, Provence-Alpes-Côte d''Azur, Metropolitan France, 05100, France',
+                       NULL,
+                       '45.0841896, 6.6064377',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       16,
+                       'Lavachey, Courmayeur, Aosta Valley, Italy',
+                       NULL,
+                       '45.8521576, 7.0246576',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       17,
+                       'Rifugio Fraita, Via Andrea Doria, Borgata Costabella, San Pietro Val Lemina, Torino, Piedmont, 10069, Italy',
+                       'Rifugio Fraita',
+                       '44.939468784124166,7.269344329833985',
+                       'Hut',
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       18,
+                       'Rifugio Infernotto, SP332, Montoso, Bagnolo Piemonte, Cuneo, Piedmont, Italy',
+                       'Rifugio Infernotto',
+                       '44.72678866062588,7.239303588867188',
+                       'Hut',
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       19,
+                       'Strada Provinciale 255 della Val Clarea, Moraretto, Giaglione, Torino, Piedmont, Italy',
+                       NULL,
+                       '45.1500804, 6.9573842',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       20,
+                       'Bovile, Angrogna, Torino, Piedmont, 10065, Italy',
+                       'Bovile',
+                       '44.87562638856904,7.202825546264649',
+                       'Parking Lot',
+                       NULL,
+                       NULL
+                   );
+
+INSERT INTO Points (
+                       idPoint,
+                       address,
+                       nameLocation,
+                       gps_coordinates,
+                       type,
+                       capacity,
+                       altitude
+                   )
+                   VALUES (
+                       21,
+                       'Opera 119, Strada Provinciale 126 del Melezet, Melezet, Bardonecchia, Torino, Piedmont, 10052, Italy',
+                       NULL,
+                       '45.0529489, 6.6774286',
+                       NULL,
+                       NULL,
+                       NULL
+                   );
+
+
+-- Table: Users
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE Users (
+    email        TEXT NOT NULL
+                      UNIQUE,
+    password     TEXT NOT NULL,
+    role         TEXT NOT NULL,
+    name         TEXT NOT NULL,
+    lastname     TEXT NOT NULL,
+    phone_number TEXT NOT NULL,
+    salt         TEXT NOT NULL,
+    PRIMARY KEY (
+        email
+    )
+);
+
+INSERT INTO Users (
+                      email,
+                      password,
+                      role,
+                      name,
+                      lastname,
+                      phone_number,
+                      salt
+                  )
+                  VALUES (
+                      'mario.rossi@gmail.com',
+                      'db17841d152b23d6feea12d9e385634e41312dc2f8971bb0a22853e2a3ff8ebe',
+                      'Hiker',
+                      'Mario',
+                      'Rossi',
+                      '+39 3486289468',
+                      'f4d3ed63888571824485d5d37dbd9fec'
+                  );
+
+INSERT INTO Users (
+                      email,
+                      password,
+                      role,
+                      name,
+                      lastname,
+                      phone_number,
+                      salt
+                  )
+                  VALUES (
+                      'paulina.knight@gmail.com',
+                      'bcd7df7ca984af35ce385885af445b8481ab54c6b518da3d6970a6eeef0045a1',
+                      'LocalGuide',
+                      'Paulina',
+                      'Knight',
+                      '+39 3276958421',
+                      'a5b9cde522b8c9fb127f173da288d699'
+                  );
+
+
+-- Table: Verification_Code
+DROP TABLE IF EXISTS Verification_Code;
+
+CREATE TABLE Verification_Code (
+    email TEXT PRIMARY KEY
+               NOT NULL
+               UNIQUE,
+    code  TEXT NOT NULL
+);
+
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;

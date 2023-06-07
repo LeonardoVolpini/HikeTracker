@@ -1,0 +1,29 @@
+
+GET http://localhost:3001/api/v36/riddles
+
+###
+
+//addRiddle POST
+POST http://localhost:3001/api/v36/riddles/addRiddle 
+Content-Type: application/json
+
+{
+    "id": 7,
+    "question": "RIDDLE7",
+    "difficulty": "E",
+    "duration": 66,
+    "correct_answer": "ANSWER7",
+    "hint_1": "A",
+    "hint_2": "7",
+    "status_riddle": "O",
+    "user_id": 1
+    
+}
+###
+
+//GetWinner
+GET http://localhost:3001/api/v36/users/winner/4
+
+###
+
+GET http://localhost:3001/api/v36/timers/readTimers
